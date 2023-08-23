@@ -64,3 +64,7 @@ func collectJSONFiles(dirPath string, jsonFiles *[]map[string]interface{}) error
 
 	return nil
 }
+
+func GetStudentByRollNumber(c *fiber.Ctx) error {
+	return nil
+}
