@@ -15,5 +15,7 @@ func main() {
 
 	app.Get("/getStudentByRollNumber", handler.GetStudentByRollNumber)
 
+	app.Get("/getStudentByName", handler.GetStudentByName)
+
 	app.Listen(config.AppPort)
 }
