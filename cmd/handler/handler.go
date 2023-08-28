@@ -70,5 +70,5 @@ func GetStudentByRollNumber(c *fiber.Ctx) error {
 }
 
 func GetStudentByName(c *fiber.Ctx) error {
-	return nil
+	return c.JSON(c.Query("name"))
 }
