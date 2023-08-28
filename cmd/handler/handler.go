@@ -3,6 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
 
@@ -69,6 +70,8 @@ func GetStudentByRollNumber(c *fiber.Ctx) error {
 	return nil
 }
 
+// http://localhost:3000/getStudentByName/?name=Subhradeep
 func GetStudentByName(c *fiber.Ctx) error {
+	fmt.Sprintln(c.Query("name"))
 	return c.JSON(c.Query("name"))
 }
