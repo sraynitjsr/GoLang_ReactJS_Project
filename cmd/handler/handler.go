@@ -3,7 +3,6 @@ package handler
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -72,6 +71,20 @@ func GetStudentByRollNumber(c *fiber.Ctx) error {
 
 // http://localhost:3000/getStudentByName/?name=Subhradeep
 func GetStudentByName(c *fiber.Ctx) error {
-	fmt.Sprintln(c.Query("name"))
-	return c.JSON(c.Query("name"))
+
+	targetDir := "STUDENTS"
+
+	var jsonFiles []map[string]interface{}
+	err := collectJSONFiles(targetDir, &jsonFiles)
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).SendString(err.Error())
+	}
+
+	var studentsByName []map[string]interface{}
+	for _, student := range jsonFiles {
+		if student["Name"] == c.Query("name") {
+			studentsByName = append(studentsByName, student)
+		}
+	}
+	return c.JSON(studentsByName)
 }
