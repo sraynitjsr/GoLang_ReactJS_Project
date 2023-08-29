@@ -65,8 +65,23 @@ func collectJSONFiles(dirPath string, jsonFiles *[]map[string]interface{}) error
 	return nil
 }
 
+// http://localhost:3000/getStudentByRollNumber/?roll=4040
 func GetStudentByRollNumber(c *fiber.Ctx) error {
-	return nil
+
+	targetDir := "STUDENTS"
+
+	var jsonFiles []map[string]interface{}
+	err := collectJSONFiles(targetDir, &jsonFiles)
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).SendString(err.Error())
+	}
+
+	for _, student := range jsonFiles {
+		if student["Roll"] == c.Query("roll") {
+			return c.JSON(student)
+		}
+	}
+	return c.Status(fiber.StatusInternalServerError).SendString("Student With Given Roll Not Found")
 }
 
 // http://localhost:3000/getStudentByName/?name=Subhradeep
