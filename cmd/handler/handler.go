@@ -101,5 +101,10 @@ func GetStudentByName(c *fiber.Ctx) error {
 			studentsByName = append(studentsByName, student)
 		}
 	}
-	return c.JSON(studentsByName)
+
+	if len(studentsByName) == 0 {
+		return c.Status(fiber.StatusInternalServerError).SendString("Student With Given Name Not Found")
+	} else {
+		return c.JSON(studentsByName)
+	}
 }
