@@ -1,0 +1,13 @@
+{
+    "NEType": "Switch",
+    "BuildVersion": "v2.0",
+    "ConfdVersion": "v3.1",
+    "DefaultConfiguration": "advanced",
+    "YangVersion": "1.2",
+    "BuildReady": "No",
+    "SupportedConfigurations": {
+        "config4": "supported",
+        "config5": "supported",
+        "config16": "supported"
+    }
+}

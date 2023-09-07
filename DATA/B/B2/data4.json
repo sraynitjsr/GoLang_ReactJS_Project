@@ -1,0 +1,12 @@
+{
+    "NEType": "LoadBalancer",
+    "BuildVersion": "v1.5",
+    "ConfdVersion": "v2.0",
+    "DefaultConfiguration": "basic",
+    "YangVersion": "1.0",
+    "BuildReady": "Yes",
+    "SupportedConfigurations": {
+        "config10": "supported",
+        "config11": "unsupported"
+    }
+}

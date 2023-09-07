@@ -1,0 +1,13 @@
+{
+    "NEType": "Gateway",
+    "BuildVersion": "v2.3",
+    "ConfdVersion": "v3.5",
+    "DefaultConfiguration": "advanced",
+    "YangVersion": "1.1",
+    "BuildReady": "Yes",
+    "SupportedConfigurations": {
+        "config12": "supported",
+        "config13": "supported",
+        "config14": "unsupported"
+    }
+}

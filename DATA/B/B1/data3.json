@@ -1,0 +1,13 @@
+{
+    "NEType": "Firewall",
+    "BuildVersion": "v2.3",
+    "ConfdVersion": "v3.2",
+    "DefaultConfiguration": "high_security",
+    "YangVersion": "1.3",
+    "BuildReady": "Yes",
+    "SupportedConfigurations": {
+        "config7": "supported",
+        "config8": "supported",
+        "config9": "unsupported"
+    }
+}

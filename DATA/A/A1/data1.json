@@ -1,0 +1,13 @@
+{
+    "NEType": "Router",
+    "BuildVersion": "v1.0",
+    "ConfdVersion": "v2.3",
+    "DefaultConfiguration": "basic",
+    "YangVersion": "1.1",
+    "BuildReady": "Yes",
+    "SupportedConfigurations": {
+        "config1": "supported",
+        "config2": "supported",
+        "config16": "unsupported"
+    }
+}
